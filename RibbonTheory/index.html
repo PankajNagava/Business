@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ribbon Theory - Premium wedding gifting and décor. Wrap your moments in elegance with our curated collection of handcrafted gifts.">
+  <title>Ribbon Theory - Premium Wedding Gifting</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .serif-font {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .burgundy-bg {
+      background-color: #4B0E0E;
+    }
+    
+    .cream-bg {
+      background-color: #F5EFE7;
+    }
+    
+    .beige-bg {
+      background-color: #E6D3B3;
+    }
+    
+    .burgundy-text {
+      color: #4B0E0E;
+    }
+    
+    .cream-text {
+      color: #F5EFE7;
+    }
+    
+    .beige-text {
+      color: #E6D3B3;
+    }
+    
+    .gold-text {
+      color: #D4AF37;
+    }
+    
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #E6D3B3;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(75, 14, 14, 0.15);
+      border-color: #D4AF37;
+    }
+    
+    .category-btn {
+      transition: all 0.3s ease;
+      border: 2px solid #E6D3B3;
+    }
+    
+    .category-btn:hover,
+    .category-btn.active {
+      background-color: #4B0E0E;
+      color: #E6D3B3;
+      border-color: #4B0E0E;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(75, 14, 14, 0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #D4AF37;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .ribbon-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+      margin: 0 auto;
+    }
+    
+    .search-input:focus,
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #D4AF37;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+    
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(75, 14, 14, 0.85) 0%, rgba(75, 14, 14, 0.7) 100%);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .product-image {
+      background: linear-gradient(135deg, #F5EFE7 0%, #E6D3B3 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      height: 280px;
+    }
+    
+    @media (max-width: 768px) {
+      .product-image {
+        height: 220px;
+        font-size: 3rem;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation -->
+  <nav class="fixed w-full top-0 z-50 burgundy-bg" style="box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+     <div class="flex items-center"><a href="#home" id="nav-brand" class="serif-font text-2xl md:text-3xl font-bold cream-text tracking-wider">RIBBON THEORY</a>
+     </div><!-- Desktop Search Bar -->
+     <div class="hidden lg:flex flex-1 max-w-md mx-8">
+      <div class="relative w-full"><input type="text" id="search-input" placeholder="Search for gifts..." class="search-input w-full px-5 py-2 pr-12 rounded-full border-2 transition-all cream-bg burgundy-text" style="border-color: #E6D3B3;">
+       <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 burgundy-text" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+       </svg>
+      </div>
+     </div><!-- Desktop Navigation Links -->
+     <div class="hidden md:flex space-x-8"><a href="#home" class="nav-link font-medium cream-text">Home</a> <a href="#about" class="nav-link font-medium cream-text">About</a> <a href="#shop" class="nav-link font-medium cream-text">Shop</a> <a href="#contact" class="nav-link font-medium cream-text">Contact</a>
+     </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg cream-text">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+     <div class="mb-4"><input type="text" id="mobile-search-input" placeholder="Search for gifts..." class="search-input w-full px-4 py-2 rounded-full border-2 cream-bg burgundy-text" style="border-color: #E6D3B3;">
+     </div>
+     <div class="flex flex-col space-y-2"><a href="#home" class="mobile-nav-link px-4 py-2 rounded-lg font-medium cream-text hover:bg-opacity-20" style="background-color: rgba(230, 211, 179, 0.1);">Home</a> <a href="#about" class="mobile-nav-link px-4 py-2 rounded-lg font-medium cream-text hover:bg-opacity-20" style="background-color: rgba(230, 211, 179, 0.1);">About</a> <a href="#shop" class="mobile-nav-link px-4 py-2 rounded-lg font-medium cream-text hover:bg-opacity-20" style="background-color: rgba(230, 211, 179, 0.1);">Shop</a> <a href="#contact" class="mobile-nav-link px-4 py-2 rounded-lg font-medium cream-text hover:bg-opacity-20" style="background-color: rgba(230, 211, 179, 0.1);">Contact</a>
+     </div>
+    </div>
+   </div>
+  </nav>
+  <main><!-- Hero Section -->
+   <section id="home" class="relative min-h-full flex items-center justify-center pt-20">
+    <div class="absolute inset-0 burgundy-bg"></div>
+    <div class="hero-overlay absolute inset-0"></div><!-- Decorative Pattern -->
+    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(230, 211, 179, 0.3) 35px, rgba(230, 211, 179, 0.3) 70px);"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+     <div class="mb-8">
+      <div class="inline-block mb-6">
+       <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 5L35 20H50L38 29L43 44L30 35L17 44L22 29L10 20H25L30 5Z" fill="#D4AF37" opacity="0.6" />
+       </svg>
+      </div>
+     </div>
+     <h1 id="hero-brand" class="serif-font text-5xl md:text-7xl lg:text-8xl font-bold mb-6 cream-text tracking-wide">RIBBON THEORY</h1>
+     <div class="ribbon-divider mb-8"></div>
+     <p id="hero-tagline" class="serif-font text-2xl md:text-3xl lg:text-4xl mb-12 beige-text italic">Wrap Your Moments in Elegance</p><a href="#shop" id="hero-cta" class="btn-primary inline-block px-10 py-4 rounded-full font-semibold text-lg burgundy-bg cream-text border-2 border-transparent hover:border-gold"> Explore Our Collection </a> <!-- Scroll Indicator -->
+     <div class="mt-16 animate-bounce">
+      <svg class="w-6 h-6 mx-auto beige-text" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- Introduction Section -->
+   <section class="py-20 cream-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+     <h2 id="intro-heading" class="serif-font text-3xl md:text-4xl font-bold mb-6 burgundy-text">Celebrating Love Through Thoughtful Gifting</h2>
+     <div class="ribbon-divider mb-8" style="background: linear-gradient(90deg, transparent, #4B0E0E, transparent);"></div>
+     <p id="intro-text" class="text-lg md:text-xl leading-relaxed burgundy-text" style="opacity: 0.85;">Your wedding day deserves to be wrapped in elegance. At Ribbon Theory, we believe that wedding gifting is about more than just the present—it's about the love, care, and thoughtfulness woven into every detail. We curate premium wedding gifts and décor that make your special day unforgettable.</p>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-20 burgundy-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <h2 id="about-title" class="serif-font text-4xl md:text-5xl font-bold mb-4 cream-text">Our Story</h2>
+      <p id="about-subtitle" class="serif-font text-xl md:text-2xl beige-text italic">Crafted with Love, Wrapped with Care</p>
+      <div class="ribbon-divider mt-8"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+       <p id="about-description" class="text-lg leading-relaxed cream-text mb-6" style="opacity: 0.9;">Ribbon Theory was born from a passion for celebrating weddings and the beautiful moments they create. Founded by artisans who understand that every detail of your special day matters, we've dedicated ourselves to sourcing and creating the finest wedding gifts, favors, and décor pieces.</p>
+       <p class="text-lg leading-relaxed cream-text mb-6" style="opacity: 0.9;">Our philosophy is simple: every ribbon we tie, every wedding gift we curate, and every piece we craft should tell a story of love, elegance, and timeless beauty. We work with skilled craftspeople and premium materials to ensure that each item in our collection meets the highest standards of quality for your big day.</p>
+       <p class="text-lg leading-relaxed cream-text" style="opacity: 0.9;">Whether you're planning your dream wedding, searching for the perfect bridal party gifts, or looking for elegant wedding favors, Ribbon Theory is here to help you create moments that will be cherished forever.</p>
+      </div>
+      <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+       <div class="rounded-lg p-8 text-center beige-bg">
+        <div class="text-5xl mb-4">
+         🎀
+        </div>
+        <h3 class="serif-font font-bold text-xl mb-2 burgundy-text">Handcrafted</h3>
+        <p class="text-sm burgundy-text" style="opacity: 0.8;">Every piece made with care</p>
+       </div>
+       <div class="rounded-lg p-8 text-center beige-bg">
+        <div class="text-5xl mb-4">
+         💝
+        </div>
+        <h3 class="serif-font font-bold text-xl mb-2 burgundy-text">Premium</h3>
+        <p class="text-sm burgundy-text" style="opacity: 0.8;">Finest materials only</p>
+       </div>
+       <div class="rounded-lg p-8 text-center beige-bg">
+        <div class="text-5xl mb-4">
+         ✨
+        </div>
+        <h3 class="serif-font font-bold text-xl mb-2 burgundy-text">Personalized</h3>
+        <p class="text-sm burgundy-text" style="opacity: 0.8;">Tailored to your vision</p>
+       </div>
+       <div class="rounded-lg p-8 text-center beige-bg">
+        <div class="text-5xl mb-4">
+         🌹
+        </div>
+        <h3 class="serif-font font-bold text-xl mb-2 burgundy-text">Timeless</h3>
+        <p class="text-sm burgundy-text" style="opacity: 0.8;">Elegance that endures</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Shop Section -->
+   <section id="shop" class="py-20 cream-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16">
+      <h2 class="serif-font text-4xl md:text-5xl font-bold mb-4 burgundy-text">Wedding Collection</h2>
+      <p class="text-xl beige-text">Curated with love for your special day</p>
+      <div class="ribbon-divider mt-8" style="background: linear-gradient(90deg, transparent, #4B0E0E, transparent);"></div>
+     </div><!-- Search Bar -->
+     <div class="mb-8 max-w-2xl mx-auto">
+      <div class="relative"><input type="text" id="shop-search-input" placeholder="Search our collection..." class="search-input w-full px-6 py-4 pr-14 rounded-full border-2 transition-all text-lg cream-bg burgundy-text" style="border-color: #E6D3B3; box-shadow: 0 4px 15px rgba(75, 14, 14, 0.1);">
+       <svg class="absolute right-5 top-1/2 transform -translate-y-1/2 w-6 h-6 burgundy-text" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+       </svg>
+      </div>
+     </div><!-- Category Filters -->
+     <div class="mb-12">
+      <div class="flex flex-wrap justify-center gap-4 mb-8"><button class="category-btn active px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="all"> All Products </button> <button class="category-btn px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="wedding"> Bridal Essentials </button> <button class="category-btn px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="gifting"> Wedding Favors </button> <button class="category-btn px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="dining"> Reception Décor </button> <button class="category-btn px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="accessories"> Bridal Party Gifts </button> <button class="category-btn px-6 py-3 rounded-full font-medium cream-bg burgundy-text" data-category="custom"> Custom Orders </button>
+      </div><!-- Additional Filters -->
+      <div class="flex flex-wrap justify-center gap-4"><select id="price-filter" class="px-5 py-3 rounded-full border-2 cream-bg burgundy-text font-medium" style="border-color: #E6D3B3;"> <option value="all">All Prices</option> <option value="low">Under $50</option> <option value="mid">$50 - $150</option> <option value="high">Over $150</option> </select> <select id="color-filter" class="px-5 py-3 rounded-full border-2 cream-bg burgundy-text font-medium" style="border-color: #E6D3B3;"> <option value="all">All Colors</option> <option value="burgundy">Burgundy</option> <option value="cream">Cream</option> <option value="gold">Gold</option> <option value="rose">Rose Gold</option> </select>
+      </div>
+     </div><!-- Products Grid -->
+     <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Products will be rendered here -->
+     </div>
+     <div id="no-results" class="hidden text-center py-16">
+      <div class="text-6xl mb-6">
+       🎀
+      </div>
+      <p class="serif-font text-2xl burgundy-text mb-2">No products found</p>
+      <p class="text-lg burgundy-text" style="opacity: 0.7;">Try adjusting your filters to discover more treasures</p>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 burgundy-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-12">
+      <h2 id="contact-title" class="serif-font text-4xl md:text-5xl font-bold mb-4 cream-text">Let's Create Something Beautiful</h2>
+      <p id="contact-subtitle" class="text-xl beige-text">We'd love to hear from you</p>
+      <div class="ribbon-divider mt-8"></div>
+     </div>
+     <div class="rounded-2xl p-8 md:p-12 beige-bg" style="box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+      <form id="contact-form">
+       <div class="mb-6"><label for="name" class="block mb-2 font-semibold burgundy-text">Name</label> <input type="text" id="name" required class="form-input w-full px-5 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="Your name">
+       </div>
+       <div class="mb-6"><label for="email" class="block mb-2 font-semibold burgundy-text">Email</label> <input type="email" id="email" required class="form-input w-full px-5 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="your.email@example.com">
+       </div>
+       <div class="mb-6"><label for="message" class="block mb-2 font-semibold burgundy-text">Message</label> <textarea id="message" rows="5" required class="form-textarea w-full px-5 py-3 rounded-lg border-2 transition-all resize-none cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="Tell us about your vision..."></textarea>
+       </div><button type="submit" class="btn-primary w-full py-4 rounded-lg font-semibold text-lg burgundy-bg cream-text border-2" style="border-color: #D4AF37;"> Send Message </button>
+       <div id="form-message" class="hidden mt-6 p-4 rounded-lg text-center font-medium"></div>
+      </form><!-- Social Media Links -->
+      <div class="mt-12 pt-8 border-t-2" style="border-color: rgba(75, 14, 14, 0.2);">
+       <p class="text-center mb-6 font-semibold burgundy-text">Connect With Us</p>
+       <div class="flex justify-center space-x-6"><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full flex items-center justify-center transition-all hover:scale-110 burgundy-bg cream-text" style="box-shadow: 0 4px 15px rgba(75, 14, 14, 0.3);">
+         <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+         </svg></a> <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full flex items-center justify-center transition-all hover:scale-110 burgundy-bg cream-text" style="box-shadow: 0 4px 15px rgba(75, 14, 14, 0.3);">
+         <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+         </svg></a> <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full flex items-center justify-center transition-all hover:scale-110 burgundy-bg cream-text" style="box-shadow: 0 4px 15px rgba(75, 14, 14, 0.3);">
+         <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+         </svg></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer class="py-8 cream-bg">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="mb-4">
+     <svg class="w-8 h-8 mx-auto" fill="#4B0E0E" viewbox="0 0 24 24"><path d="M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z" />
+     </svg>
+    </div>
+    <p id="footer-text" class="serif-font burgundy-text">© 2024 Ribbon Theory. Crafted with love.</p>
+   </div>
+  </footer>
+  <script>
+    // Product data
+    const products = [
+      { id: 1, name: 'Silk Wedding Ribbon Set', category: 'wedding', price: 89.99, color: 'burgundy', emoji: '🎀', description: 'Premium silk ribbons for bouquets and décor' },
+      { id: 2, name: 'Wedding Favor Candles', category: 'gifting', price: 124.99, color: 'cream', emoji: '🕯️', description: 'Elegant crystal holders - perfect guest favors' },
+      { id: 3, name: 'Gold Reception Cutlery', category: 'dining', price: 189.99, color: 'gold', emoji: '🍴', description: '24-piece gold-plated cutlery for reception' },
+      { id: 4, name: 'Velvet Ring Box', category: 'wedding', price: 45.99, color: 'burgundy', emoji: '💍', description: 'Handcrafted velvet ring presentation box' },
+      { id: 5, name: 'Custom Monogram Napkins', category: 'custom', price: 67.99, color: 'cream', emoji: '🧵', description: 'Personalized wedding napkins with embroidery' },
+      { id: 6, name: 'Rose Gold Cake Stand', category: 'dining', price: 156.99, color: 'rose', emoji: '🎂', description: 'Three-tier rose gold wedding cake display' },
+      { id: 7, name: 'Bridesmaid Gift Boxes', category: 'accessories', price: 42.99, color: 'cream', emoji: '🎁', description: 'Set of 5 elegant bridesmaid gift boxes' },
+      { id: 8, name: 'Bridal Hair Accessories', category: 'wedding', price: 78.99, color: 'cream', emoji: '👰', description: 'Delicate pearl hair pins and combs for bride' },
+      { id: 9, name: 'Burgundy Table Runner', category: 'dining', price: 95.99, color: 'burgundy', emoji: '🌹', description: 'Luxurious velvet runner for reception tables' },
+      { id: 10, name: 'Gold Place Card Holders', category: 'dining', price: 52.99, color: 'gold', emoji: '✨', description: 'Set of 12 elegant place card holders' },
+      { id: 11, name: 'Custom Wedding Wax Seals', category: 'custom', price: 38.99, color: 'burgundy', emoji: '💌', description: 'Personalized wax seal kit for invitations' },
+      { id: 12, name: 'Champagne Flutes Set', category: 'gifting', price: 142.99, color: 'cream', emoji: '🥂', description: 'Set of 6 crystal flutes for toasting' }
+    ];
+
+    let filteredProducts = [...products];
+    let currentCategory = 'all';
+    let currentPriceRange = 'all';
+    let currentColor = 'all';
+    let searchQuery = '';
+
+    // Default config
+    const defaultConfig = {
+      brand_name: 'RIBBON THEORY',
+      hero_tagline: 'Wrap Your Moments in Elegance',
+      hero_cta: 'Explore Our Collection',
+      intro_heading: 'Celebrating Love Through Thoughtful Gifting',
+      intro_text: 'Your wedding day deserves to be wrapped in elegance. At Ribbon Theory, we believe that wedding gifting is about more than just the present—it\'s about the love, care, and thoughtfulness woven into every detail. We curate premium wedding gifts and décor that make your special day unforgettable.',
+      about_title: 'Our Story',
+      about_subtitle: 'Crafted with Love, Wrapped with Care',
+      about_text: 'Ribbon Theory was born from a passion for celebrating weddings and the beautiful moments they create. Founded by artisans who understand that every detail of your special day matters, we\'ve dedicated ourselves to sourcing and creating the finest wedding gifts, favors, and décor pieces.',
+      contact_title: 'Let\'s Create Something Beautiful',
+      contact_subtitle: 'We\'d love to hear from you',
+      footer_text: '© 2024 Ribbon Theory. Crafted with love.',
+      burgundy_color: '#4B0E0E',
+      cream_color: '#F5EFE7',
+      beige_color: '#E6D3B3',
+      gold_color: '#D4AF37',
+      rose_gold_color: '#B76E79',
+      font_family: 'Montserrat',
+      heading_font: 'Playfair Display',
+      font_size: 16
+    };
+
+    // Render products
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const noResults = document.getElementById('no-results');
+      
+      if (filteredProducts.length === 0) {
+        grid.classList.add('hidden');
+        noResults.classList.remove('hidden');
+        return;
+      }
+      
+      grid.classList.remove('hidden');
+      noResults.classList.add('hidden');
+      
+      grid.innerHTML = filteredProducts.map(product => `
+        <div class="product-card rounded-lg overflow-hidden cream-bg fade-in">
+          <div class="product-image">
+            <span style="font-size: 4rem;">${product.emoji}</span>
+          </div>
+          <div class="p-6">
+            <h3 class="serif-font text-2xl font-bold mb-2 burgundy-text">${product.name}</h3>
+            <p class="text-sm mb-4 burgundy-text" style="opacity: 0.7;">${product.description}</p>
+            <div class="flex justify-between items-center">
+              <span class="serif-font text-3xl font-bold burgundy-text">$${product.price.toFixed(2)}</span>
+              <button class="px-6 py-2 rounded-full font-semibold transition-all hover:scale-105 burgundy-bg cream-text" style="box-shadow: 0 4px 12px rgba(75, 14, 14, 0.3);">
+                Inquire
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter products
+    function filterProducts() {
+      filteredProducts = products.filter(product => {
+        const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+        const matchesPrice = currentPriceRange === 'all' || 
+          (currentPriceRange === 'low' && product.price < 50) ||
+          (currentPriceRange === 'mid' && product.price >= 50 && product.price <= 150) ||
+          (currentPriceRange === 'high' && product.price > 150);
+        const matchesColor = currentColor === 'all' || product.color === currentColor;
+        const matchesSearch = searchQuery === '' || 
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        
+        return matchesCategory && matchesPrice && matchesColor && matchesSearch;
+      });
+      
+      renderProducts();
+    }
+
+    // Category filter buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.category-btn').forEach(b => {
+          b.classList.remove('active');
+        });
+        
+        this.classList.add('active');
+        currentCategory = this.dataset.category;
+        filterProducts();
+      });
+    });
+
+    // Price filter
+    document.getElementById('price-filter').addEventListener('change', function() {
+      currentPriceRange = this.value;
+      filterProducts();
+    });
+
+    // Color filter
+    document.getElementById('color-filter').addEventListener('change', function() {
+      currentColor = this.value;
+      filterProducts();
+    });
+
+    // Search functionality
+    function handleSearch(value) {
+      searchQuery = value;
+      filterProducts();
+    }
+
+    document.getElementById('search-input').addEventListener('input', function() {
+      handleSearch(this.value);
+    });
+
+    document.getElementById('mobile-search-input').addEventListener('input', function() {
+      handleSearch(this.value);
+      document.getElementById('search-input').value = this.value;
+    });
+
+    document.getElementById('shop-search-input').addEventListener('input', function() {
+      handleSearch(this.value);
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking nav links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Contact form
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formMessage = document.getElementById('form-message');
+      formMessage.textContent = 'Thank you for reaching out! We\'ll be in touch soon to discuss your vision.';
+      formMessage.style.backgroundColor = '#4B0E0E';
+      formMessage.style.color = '#F5EFE7';
+      formMessage.classList.remove('hidden');
+      
+      this.reset();
+      
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Element SDK implementation
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const headingFont = config.heading_font || defaultConfig.heading_font;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'sans-serif';
+      const serifFontStack = 'serif';
+      
+      // Apply fonts
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.querySelectorAll('.serif-font').forEach(el => {
+        el.style.fontFamily = `${headingFont}, ${serifFontStack}`;
+      });
+      
+      // Update text content
+      document.getElementById('nav-brand').textContent = config.brand_name || defaultConfig.brand_name;
+      document.getElementById('hero-brand').textContent = config.brand_name || defaultConfig.brand_name;
+      document.getElementById('hero-tagline').textContent = config.hero_tagline || defaultConfig.hero_tagline;
+      document.getElementById('hero-cta').textContent = config.hero_cta || defaultConfig.hero_cta;
+      document.getElementById('intro-heading').textContent = config.intro_heading || defaultConfig.intro_heading;
+      document.getElementById('intro-text').textContent = config.intro_text || defaultConfig.intro_text;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('about-subtitle').textContent = config.about_subtitle || defaultConfig.about_subtitle;
+      document.getElementById('about-description').textContent = config.about_text || defaultConfig.about_text;
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('contact-subtitle').textContent = config.contact_subtitle || defaultConfig.contact_subtitle;
+      document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+      
+      // Apply colors
+      const burgundy = config.burgundy_color || defaultConfig.burgundy_color;
+      const cream = config.cream_color || defaultConfig.cream_color;
+      const beige = config.beige_color || defaultConfig.beige_color;
+      const gold = config.gold_color || defaultConfig.gold_color;
+      
+      document.querySelectorAll('.burgundy-bg').forEach(el => el.style.backgroundColor = burgundy);
+      document.querySelectorAll('.cream-bg').forEach(el => el.style.backgroundColor = cream);
+      document.querySelectorAll('.beige-bg').forEach(el => el.style.backgroundColor = beige);
+      document.querySelectorAll('.burgundy-text').forEach(el => el.style.color = burgundy);
+      document.querySelectorAll('.cream-text').forEach(el => el.style.color = cream);
+      document.querySelectorAll('.beige-text').forEach(el => el.style.color = beige);
+      document.querySelectorAll('.gold-text').forEach(el => el.style.color = gold);
+      
+      // Apply font sizes
+      document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${baseSize * 4}px`);
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${baseSize * 2.5}px`);
+      document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${baseSize * 1.5}px`);
+      document.querySelectorAll('p, button, input, textarea, select, a').forEach(el => {
+        if (!el.classList.contains('text-2xl') && !el.classList.contains('text-3xl')) {
+          el.style.fontSize = `${baseSize}px`;
+        }
+      });
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.burgundy_color || defaultConfig.burgundy_color,
+              set: (value) => {
+                config.burgundy_color = value;
+                window.elementSdk.setConfig({ burgundy_color: value });
+              }
+            },
+            {
+              get: () => config.cream_color || defaultConfig.cream_color,
+              set: (value) => {
+                config.cream_color = value;
+                window.elementSdk.setConfig({ cream_color: value });
+              }
+            },
+            {
+              get: () => config.beige_color || defaultConfig.beige_color,
+              set: (value) => {
+                config.beige_color = value;
+                window.elementSdk.setConfig({ beige_color: value });
+              }
+            },
+            {
+              get: () => config.gold_color || defaultConfig.gold_color,
+              set: (value) => {
+                config.gold_color = value;
+                window.elementSdk.setConfig({ gold_color: value });
+              }
+            },
+            {
+              get: () => config.rose_gold_color || defaultConfig.rose_gold_color,
+              set: (value) => {
+                config.rose_gold_color = value;
+                window.elementSdk.setConfig({ rose_gold_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['brand_name', config.brand_name || defaultConfig.brand_name],
+          ['hero_tagline', config.hero_tagline || defaultConfig.hero_tagline],
+          ['hero_cta', config.hero_cta || defaultConfig.hero_cta],
+          ['intro_heading', config.intro_heading || defaultConfig.intro_heading],
+          ['intro_text', config.intro_text || defaultConfig.intro_text],
+          ['about_title', config.about_title || defaultConfig.about_title],
+          ['about_subtitle', config.about_subtitle || defaultConfig.about_subtitle],
+          ['about_text', config.about_text || defaultConfig.about_text],
+          ['contact_title', config.contact_title || defaultConfig.contact_title],
+          ['contact_subtitle', config.contact_subtitle || defaultConfig.contact_subtitle],
+          ['footer_text', config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+
+    // Initial render
+    renderProducts();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99d6ccc8a5573d2b',t:'MTc2Mjk1ODU4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
