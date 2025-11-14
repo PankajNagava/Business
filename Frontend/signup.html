@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ribbon Theory - Create your account">
+  <title>Sign Up - Ribbon Theory</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .serif-font {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .burgundy-bg {
+      background-color: #4B0E0E;
+    }
+    
+    .cream-bg {
+      background-color: #F5EFE7;
+    }
+    
+    .beige-bg {
+      background-color: #E6D3B3;
+    }
+    
+    .burgundy-text {
+      color: #4B0E0E;
+    }
+    
+    .cream-text {
+      color: #F5EFE7;
+    }
+    
+    .beige-text {
+      color: #E6D3B3;
+    }
+    
+    .gold-text {
+      color: #D4AF37;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #D4AF37;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(75, 14, 14, 0.3);
+    }
+    
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(75, 14, 14, 0.4);
+    }
+    
+    .btn-primary:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    .link-text {
+      transition: color 0.3s ease;
+    }
+    
+    .link-text:hover {
+      color: #D4AF37;
+    }
+    
+    .ribbon-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+      margin: 0 auto;
+    }
+    
+    .signup-container {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    
+    .decorative-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(230, 211, 179, 0.3) 35px, rgba(230, 211, 179, 0.3) 70px);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #4B0E0E;
+      opacity: 0.5;
+    }
+    
+    .input-with-icon {
+      padding-left: 3rem;
+    }
+    
+    .password-strength {
+      height: 4px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+    }
+    
+    .strength-weak {
+      background-color: #dc2626;
+      width: 33%;
+    }
+    
+    .strength-medium {
+      background-color: #f59e0b;
+      width: 66%;
+    }
+    
+    .strength-strong {
+      background-color: #10b981;
+      width: 100%;
+    }
+    
+    @media (max-width: 640px) {
+      .signup-card {
+        margin: 1rem;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body class="cream-bg">
+  <main class="signup-container relative">
+   <div class="decorative-pattern"></div>
+   <div class="signup-card relative z-10 w-full max-w-md fade-in"><!-- Logo and Brand -->
+    <div class="text-center mb-8">
+     <div class="inline-block mb-4">
+      <svg width="50" height="50" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 5L35 20H50L38 29L43 44L30 35L17 44L22 29L10 20H25L30 5Z" fill="#4B0E0E" opacity="0.8" />
+      </svg>
+     </div>
+     <h1 id="brand-name" class="serif-font text-4xl md:text-5xl font-bold burgundy-text tracking-wide mb-2">RIBBON THEORY</h1>
+     <div class="ribbon-divider"></div>
+    </div><!-- Signup Form Card -->
+    <div class="beige-bg rounded-2xl p-8 md:p-10" style="box-shadow: 0 20px 60px rgba(75, 14, 14, 0.15);">
+     <div class="text-center mb-8">
+      <h2 id="welcome-heading" class="serif-font text-3xl font-bold burgundy-text mb-2">Join Ribbon Theory</h2>
+      <p id="welcome-subtitle" class="burgundy-text text-sm" style="opacity: 0.7;">Create your account to start your elegant journey</p>
+     </div>
+     <form id="signup-form"><!-- Full Name Input -->
+      <div class="mb-5"><label for="fullname" class="block mb-2 font-semibold burgundy-text text-sm">Full Name</label>
+       <div class="relative">
+        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg><input type="text" id="fullname" required class="form-input input-with-icon w-full px-4 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="Enter your full name">
+       </div>
+      </div><!-- Email Input -->
+      <div class="mb-5"><label for="email" class="block mb-2 font-semibold burgundy-text text-sm">Email Address</label>
+       <div class="relative">
+        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+        </svg><input type="email" id="email" required class="form-input input-with-icon w-full px-4 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="your.email@example.com">
+       </div>
+      </div><!-- Password Input -->
+      <div class="mb-5"><label for="password" class="block mb-2 font-semibold burgundy-text text-sm">Password</label>
+       <div class="relative">
+        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg><input type="password" id="password" required minlength="8" class="form-input input-with-icon w-full px-4 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="Create a strong password">
+       </div>
+       <div id="password-strength" class="password-strength hidden"></div>
+       <p id="password-hint" class="text-xs mt-2 burgundy-text" style="opacity: 0.6;">At least 8 characters</p>
+      </div><!-- Confirm Password Input -->
+      <div class="mb-5"><label for="confirm-password" class="block mb-2 font-semibold burgundy-text text-sm">Confirm Password</label>
+       <div class="relative">
+        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg><input type="password" id="confirm-password" required class="form-input input-with-icon w-full px-4 py-3 rounded-lg border-2 transition-all cream-bg burgundy-text" style="border-color: #D4AF37;" placeholder="Confirm your password">
+       </div>
+       <p id="password-match" class="text-xs mt-2 hidden"></p>
+      </div><!-- Terms and Conditions -->
+      <div class="mb-6"><label class="flex items-start cursor-pointer"> <input type="checkbox" id="terms" required class="w-4 h-4 rounded mt-1" style="accent-color: #4B0E0E;"> <span class="ml-2 text-sm burgundy-text"> I agree to the <a href="#terms" class="link-text font-medium gold-text">Terms &amp; Conditions</a> and <a href="#privacy" class="link-text font-medium gold-text">Privacy Policy</a> </span> </label>
+      </div><!-- Signup Button --> <button type="submit" id="signup-button" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg burgundy-bg cream-text border-2" style="border-color: #D4AF37;"> Create Account </button> <!-- Success/Error Message -->
+      <div id="form-message" class="hidden mt-6 p-4 rounded-lg text-center font-medium"></div>
+     </form><!-- Divider -->
+     <div class="my-8 flex items-center">
+      <div class="flex-1 border-t-2" style="border-color: rgba(75, 14, 14, 0.2);"></div><span class="px-4 text-sm burgundy-text" style="opacity: 0.6;">OR</span>
+      <div class="flex-1 border-t-2" style="border-color: rgba(75, 14, 14, 0.2);"></div>
+     </div><!-- Login Link -->
+     <div class="text-center">
+      <p class="burgundy-text"><span id="login-text">Already have an account?</span> <a href="#login" id="login-link" class="font-semibold link-text ml-1 gold-text">Sign in here</a></p>
+     </div>
+    </div><!-- Footer -->
+    <div class="text-center mt-8">
+     <p class="text-sm burgundy-text" style="opacity: 0.6;">© 2024 Ribbon Theory. Crafted with love.</p>
+    </div>
+   </div>
+  </main>
+  <script>
+    // Default config
+    const defaultConfig = {
+      brand_name: 'RIBBON THEORY',
+      welcome_heading: 'Join Ribbon Theory',
+      welcome_subtitle: 'Create your account to start your elegant journey',
+      signup_button_text: 'Create Account',
+      login_text: 'Already have an account?',
+      login_link_text: 'Sign in here',
+      burgundy_color: '#4B0E0E',
+      cream_color: '#F5EFE7',
+      beige_color: '#E6D3B3',
+      gold_color: '#D4AF37',
+      font_family: 'Montserrat',
+      heading_font: 'Playfair Display',
+      font_size: 16
+    };
+
+    // Password strength checker
+    function checkPasswordStrength(password) {
+      const strengthBar = document.getElementById('password-strength');
+      const hint = document.getElementById('password-hint');
+      
+      if (password.length === 0) {
+        strengthBar.classList.add('hidden');
+        hint.textContent = 'At least 8 characters';
+        hint.style.color = '';
+        return;
+      }
+      
+      strengthBar.classList.remove('hidden');
+      
+      let strength = 0;
+      if (password.length >= 8) strength++;
+      if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+      if (password.match(/[0-9]/)) strength++;
+      if (password.match(/[^a-zA-Z0-9]/)) strength++;
+      
+      strengthBar.className = 'password-strength';
+      
+      if (strength <= 2) {
+        strengthBar.classList.add('strength-weak');
+        hint.textContent = 'Weak password';
+        hint.style.color = '#dc2626';
+      } else if (strength === 3) {
+        strengthBar.classList.add('strength-medium');
+        hint.textContent = 'Medium strength';
+        hint.style.color = '#f59e0b';
+      } else {
+        strengthBar.classList.add('strength-strong');
+        hint.textContent = 'Strong password!';
+        hint.style.color = '#10b981';
+      }
+    }
+
+    // Password match checker
+    function checkPasswordMatch() {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const matchMessage = document.getElementById('password-match');
+      
+      if (confirmPassword.length === 0) {
+        matchMessage.classList.add('hidden');
+        return;
+      }
+      
+      matchMessage.classList.remove('hidden');
+      
+      if (password === confirmPassword) {
+        matchMessage.textContent = '✓ Passwords match';
+        matchMessage.style.color = '#10b981';
+      } else {
+        matchMessage.textContent = '✗ Passwords do not match';
+        matchMessage.style.color = '#dc2626';
+      }
+    }
+
+    // Event listeners for password validation
+    document.getElementById('password').addEventListener('input', function() {
+      checkPasswordStrength(this.value);
+      checkPasswordMatch();
+    });
+
+    document.getElementById('confirm-password').addEventListener('input', checkPasswordMatch);
+
+    // Signup form handler
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const terms = document.getElementById('terms').checked;
+      const formMessage = document.getElementById('form-message');
+      const signupButton = document.getElementById('signup-button');
+      
+      // Validate passwords match
+      if (password !== confirmPassword) {
+        formMessage.textContent = 'Passwords do not match. Please try again.';
+        formMessage.style.backgroundColor = '#dc2626';
+        formMessage.style.color = '#F5EFE7';
+        formMessage.classList.remove('hidden');
+        return;
+      }
+      
+      // Validate terms
+      if (!terms) {
+        formMessage.textContent = 'Please accept the Terms & Conditions to continue.';
+        formMessage.style.backgroundColor = '#f59e0b';
+        formMessage.style.color = '#4B0E0E';
+        formMessage.classList.remove('hidden');
+        return;
+      }
+      
+      // Disable button and show loading state
+      signupButton.disabled = true;
+      signupButton.textContent = 'Creating Account...';
+      
+      // Simulate signup process
+      setTimeout(() => {
+        // Demo: Show success message
+        formMessage.textContent = `Welcome, ${fullname}! Your account has been created successfully.`;
+        formMessage.style.backgroundColor = '#4B0E0E';
+        formMessage.style.color = '#F5EFE7';
+        formMessage.classList.remove('hidden');
+        
+        // Reset form
+        this.reset();
+        document.getElementById('password-strength').classList.add('hidden');
+        document.getElementById('password-match').classList.add('hidden');
+        document.getElementById('password-hint').textContent = 'At least 8 characters';
+        document.getElementById('password-hint').style.color = '';
+        
+        // Re-enable button
+        setTimeout(() => {
+          signupButton.disabled = false;
+          signupButton.textContent = defaultConfig.signup_button_text;
+          formMessage.classList.add('hidden');
+        }, 3000);
+      }, 1500);
+    });
+
+    // Login link handler
+    document.getElementById('login-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      const formMessage = document.getElementById('form-message');
+      formMessage.textContent = 'Login page would open here.';
+      formMessage.style.backgroundColor = '#E6D3B3';
+      formMessage.style.color = '#4B0E0E';
+      formMessage.classList.remove('hidden');
+      
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 3000);
+    });
+
+    // Element SDK implementation
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const headingFont = config.heading_font || defaultConfig.heading_font;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'sans-serif';
+      const serifFontStack = 'serif';
+      
+      // Apply fonts
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.querySelectorAll('.serif-font').forEach(el => {
+        el.style.fontFamily = `${headingFont}, ${serifFontStack}`;
+      });
+      
+      // Update text content
+      document.getElementById('brand-name').textContent = config.brand_name || defaultConfig.brand_name;
+      document.getElementById('welcome-heading').textContent = config.welcome_heading || defaultConfig.welcome_heading;
+      document.getElementById('welcome-subtitle').textContent = config.welcome_subtitle || defaultConfig.welcome_subtitle;
+      document.getElementById('signup-button').textContent = config.signup_button_text || defaultConfig.signup_button_text;
+      document.getElementById('login-text').textContent = config.login_text || defaultConfig.login_text;
+      document.getElementById('login-link').textContent = config.login_link_text || defaultConfig.login_link_text;
+      
+      // Apply colors
+      const burgundy = config.burgundy_color || defaultConfig.burgundy_color;
+      const cream = config.cream_color || defaultConfig.cream_color;
+      const beige = config.beige_color || defaultConfig.beige_color;
+      const gold = config.gold_color || defaultConfig.gold_color;
+      
+      document.querySelectorAll('.burgundy-bg').forEach(el => el.style.backgroundColor = burgundy);
+      document.querySelectorAll('.cream-bg').forEach(el => el.style.backgroundColor = cream);
+      document.querySelectorAll('.beige-bg').forEach(el => el.style.backgroundColor = beige);
+      document.querySelectorAll('.burgundy-text').forEach(el => el.style.color = burgundy);
+      document.querySelectorAll('.cream-text').forEach(el => el.style.color = cream);
+      document.querySelectorAll('.beige-text').forEach(el => el.style.color = beige);
+      document.querySelectorAll('.gold-text').forEach(el => el.style.color = gold);
+      
+      // Apply font sizes
+      document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${baseSize * 2.5}px`);
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${baseSize * 1.875}px`);
+      document.querySelectorAll('p, button, input, label, a').forEach(el => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+    }
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.burgundy_color || defaultConfig.burgundy_color,
+              set: (value) => {
+                config.burgundy_color = value;
+                window.elementSdk.setConfig({ burgundy_color: value });
+              }
+            },
+            {
+              get: () => config.cream_color || defaultConfig.cream_color,
+              set: (value) => {
+                config.cream_color = value;
+                window.elementSdk.setConfig({ cream_color: value });
+              }
+            },
+            {
+              get: () => config.beige_color || defaultConfig.beige_color,
+              set: (value) => {
+                config.beige_color = value;
+                window.elementSdk.setConfig({ beige_color: value });
+              }
+            },
+            {
+              get: () => config.gold_color || defaultConfig.gold_color,
+              set: (value) => {
+                config.gold_color = value;
+                window.elementSdk.setConfig({ gold_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['brand_name', config.brand_name || defaultConfig.brand_name],
+          ['welcome_heading', config.welcome_heading || defaultConfig.welcome_heading],
+          ['welcome_subtitle', config.welcome_subtitle || defaultConfig.welcome_subtitle],
+          ['signup_button_text', config.signup_button_text || defaultConfig.signup_button_text],
+          ['login_text', config.login_text || defaultConfig.login_text],
+          ['login_link_text', config.login_link_text || defaultConfig.login_link_text]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99d845fbd1b03d2b',t:'MTc2Mjk3NDAzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
