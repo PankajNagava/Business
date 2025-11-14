@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Rose Bouquet - Red",
+        "price": 499,
+        "image": "/assets/rose-red.jpg",
+        "description": "Elegant hand-crafted rose bouquet.",
+        "whatsapp_message": "I want to order the Red Rose Bouquet"
+    },
+    {
+        "id": 2,
+        "name": "Cutlery Set Gold",
+        "price": 999,
+        "image": "/assets/gold-cutlery.jpg",
+        "description": "Premium 5-piece golden cutlery set.",
+        "whatsapp_message": "I want to order the Gold Cutlery Set"
+    }
+]
